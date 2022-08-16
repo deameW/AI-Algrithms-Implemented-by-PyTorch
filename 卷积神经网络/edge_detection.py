@@ -7,7 +7,7 @@ from torch import nn
 if __name__ == "__main__":
     image = Image.open('../data/edge_deection.jpg') # 300x300
     # 指定色彩模式，L: 8位像素，黑白
-    image = image.convert("L")
+    # image = image.convert("L")
     image_np = np.array(image)
 
     # 创建tensor
@@ -17,7 +17,6 @@ if __name__ == "__main__":
     # 卷积核
     kersize = 5
     kernel = torch.ones(kersize,kersize,dtype=torch.float32) * -1
-    print(kernel)
 
     conv2d = torch.nn.Conv2d(1,1,(kersize,kersize),bias=False)
     kernel = kernel.reshape((1,1,kersize,kersize))
