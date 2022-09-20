@@ -53,8 +53,8 @@ pipline_test = transforms.Compose([
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     # transforms.Normalize(mean = [0.485, 0.456, 0.406],std = [0.229, 0.224, 0.225])
 ])
-train_data = MyDataset('./catVSdog/train.txt', transform=pipline_train)
-test_data = MyDataset('./catVSdog/test.txt', transform=pipline_test)
+train_data = MyDataset('../../data_set/catVSdog/train.txt', transform=pipline_train)
+test_data = MyDataset('../../data_set/catVSdog/test.txt', transform=pipline_test)
 
 # train_data 和test_data包含多有的训练与测试数据，调用DataLoader批量加载
 trainloader = torch.utils.data.DataLoader(dataset=train_data, batch_size=64, shuffle=True)

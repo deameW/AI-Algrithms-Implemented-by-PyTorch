@@ -1,15 +1,11 @@
 import numpy as np
-import pandas as pd
-import xgboost as xgb
-
-from sklearn.metrics import mean_squared_error
-import matplotlib.pyplot as plt
 
 
 """
     Preprocessing
 """
-# Function that automatically finds RUL values for both models if it is supplied with the total number of cycles.
+# Function that automatically finds RUL values for both models(Linear degradation model/piecewise degradation model)
+# if it is supplied with the total number of cycles.
 def process_targets(data_length, early_rul = None):
     """
     Takes datalength and earlyrul as input and
