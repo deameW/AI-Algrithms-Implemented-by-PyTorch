@@ -54,6 +54,7 @@ def Perceptron(X,y,lr,epochs):
             # Calculating prediction/hypothesis.
             y_hat = step_func(np.dot(x_i.T, theta))
 
+            # TODO: figure out why using this theta updating method
             # Updating if the example is misclassified.
             if (np.squeeze(y_hat) - y[idx]) != 0:
                 theta += lr * ((y[idx] - y_hat) * x_i)
@@ -92,4 +93,5 @@ def plot_decision_boundary(X, theta):
 
 if __name__ == '__main__':
     theta, miss_l = Perceptron(X, y, 0.5, 100)
+    print(miss_l)
     plot_decision_boundary(X, theta)
